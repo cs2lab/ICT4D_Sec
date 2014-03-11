@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Striped 2.5 by HTML5 Up!
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ICT4D - Security</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div id="content-inner">
+					
+							<!-- Post -->
+								<article class="is-post is-post-excerpt">
+									<header>
+										<!--
+											Note: Titles and bylines will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the "byline" span entirely if you don't
+											need a byline.
+										-->
+										<h2><a href="#">Part 1</a></h2>
+										<span class="byline">Vulnerability assessment</span>
+									</header>
+									<div class="info">
+										<span class="date"><span class="month">Intro</span> <span class="month">duction</span></span>
+										<!--
+											Note: You can change the number of list items in "stats" to whatever you want.
+										-->
+										<!--<ul class="stats">
+											<li><a href="#" class="fa fa-comment">16</a></li>
+											<li><a href="#" class="fa fa-heart">32</a></li>
+											<li><a href="#" class="fa fa-twitter">64</a></li>
+											<li><a href="#" class="fa fa-facebook">128</a></li>
+										</ul>-->
+									</div>
+									
+									<p>
+										Welcome to the First part of the assignment on how to assess the security posture of a system
+									</p>
+									
+								</article>
+						
+							<article class="is-post is-post-excerpt">
+									<header>
+										<!--<h2><a href="#">Lab Goals</a></h2>-->
+										<span class="byline">The objectives of this part</span>
+									</header>
+									<div class="info">
+										<span class="date"><span class="month">Obje</span> <span class="month">ctives</span></span>
+										<!--<ul class="stats">
+											<li><a href="#" class="fa fa-comment">16</a></li>
+											<li><a href="#" class="fa fa-heart">32</a></li>
+											<li><a href="#" class="fa fa-twitter">64</a></li>
+											<li><a href="#" class="fa fa-facebook">128</a></li>
+										</ul>-->
+									</div>
+									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
+									<p>
+										<ul>
+										<li>By the end of this lab assignment, you will understand the differences between the attack surface of a vulnerable and a more secure system.</li>
+										</ul>
+									</p>
+								</article>
+						
+							<article class="is-post is-post-excerpt">
+									<header>
+										<!--<h2><a href="#">Lab Goals</a></h2>-->
+										<span class="byline">Tools to be used</span>
+									</header>
+									<div class="info">
+										<span class="date"><span class="month">Tools</span></span>
+										<!--<ul class="stats">
+											<li><a href="#" class="fa fa-comment">16</a></li>
+											<li><a href="#" class="fa fa-heart">32</a></li>
+											<li><a href="#" class="fa fa-twitter">64</a></li>
+											<li><a href="#" class="fa fa-facebook">128</a></li>
+										</ul>-->
+									</div>
+									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
+									<h4>OpenVAS</h4>
+									<p class="image"><img src="images/openvas_logo.png" alt=""/></p>
+									<p>
+										This tool is a so-called “vulnerability scanner” which looks for possible security holes in a computer system or in a network of computers. Vulnerability scanners are used in a preventive way in order to test how secure the system is. It can thus be used by both security administrators and “hackers”.</p>
+
+<p>OpenVAS consists of a server and a client program. The server can be accessed either through a web interface or a desktop or command-line interface. In the context of the lab, there is one dedicated server acting as the OpenVAS server and its IP address is: 172.16.1.128.</p> 
+
+<p>The OpenVAS server has its own user database, where each user’s profile may have different settings and restrictions. This may allow different users to share a single server for a whole network and different administrators testing their assigned part of the network.
+									</p>
+									<h4>Microsoft Attack Surface Analyzer</h4>
+									<p class="image"><img src="images/Attack-surface-analyzer.png" alt=""/></p>
+									<p>
+										Attack Surface Analyzer is a tool offered by Microsoft targeting its series of Windows Operating Systems. The tool can take a snapshot of the current system state that can be used as a baseline and later compared against future changes of the system that may be caused by e.g. additional software installations. 
+									</p>
+									<p>
+										IT Security professionals but users as well can utilize this application in order to assess the changes in the Attack Surface of their system that a new installation causes.
+									</p>
+								</article>
+						
+							<!-- Post -->
+								<article class="is-post is-post-excerpt">
+									<header>
+										<!--<h2><a href="#">Lab Goals</a></h2>-->
+										<span class="byline">Instructions</span>
+									</header>
+									<div class="info">
+										<span class="date"><span class="month">Tasks</span> <!--<span class="month">ctives</span>--></span>
+										<!--<ul class="stats">
+											<li><a href="#" class="fa fa-comment">16</a></li>
+											<li><a href="#" class="fa fa-heart">32</a></li>
+											<li><a href="#" class="fa fa-twitter">64</a></li>
+											<li><a href="#" class="fa fa-facebook">128</a></li>
+										</ul>-->
+									</div>
+									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
+									<p>
+										Perform the following tasks.
+									</p>
+									<ol class="style1">
+<li>										Open your browser and point it to the following URL: http://172.16.1.128:9392. Login with ‘grpX’ as the username where ‘X’ stands for your group number and your group password.</li>
+<li>On the top menu bar of the web interface, you can navigate through various possible actions. Click on the ‘Configuration->Targets’ menu option and then on the star button in order to create a new target. Specify a descriptive name for your target and also the IP address of the target host which is the IP addresses of your assigned VMs. You can either generate your own port list or just use the default. Finally, click on the ‘Create Target’ button. </li>
+<p class="image"><img src="images/openvas-target.png" alt=""></img></p>
+<li>Navigate to the ‘Scan Management->New Task’ menu option. Specify a name for the task, select your preferred scan configuration and specify the target. Click on the ‘Create Task’ button.</li>
+<p class="image"><img src="images/openvas-task.png" alt=""></img></p>
+<li>In the ‘Tasks’ screen that appears, locate the row that your newly created task has been assigned and click on the ‘Start’ button.</li>
+<li>Wait until the task finishes. You can check its progress using the Refresh button.</li>
+<li>After the task has completed, click on the links generated for the completed Task. Examine the aggregated results per vulnerability level and click on the Details icon to further examine the results by downloading the generated report. </li>
+<p class="image"><img src="images/openvas-report.png" alt=""></img></p>
+<li>Look through the report – see what results you obtained.  Now, return to the web interface and try creating some new tasks with different scan configurations and experiment with different settings.  You can also try running scans on more than one target.</li>
+<li>Open the Microsoft Attack Surface Analyzer. Select to ‘Run a New Scan’. After some minutes the operation completes and generates a ‘.cab’ file. This file is going to be used as our baseline system state. Close the application.</li>
+									</ol>
+								</article>
+								
+								<article class="is-post is-post-excerpt">
+									<header>
+										<!--<h2><a href="#">Lab Goals</a></h2>-->
+										<span class="byline">Questions</span>
+									</header>
+									<div class="info">
+										<span class="date"><span class="month">Questions</span> <!--<span class="month">ctives</span>--></span>
+										<!--<ul class="stats">
+											<li><a href="#" class="fa fa-comment">16</a></li>
+											<li><a href="#" class="fa fa-heart">32</a></li>
+											<li><a href="#" class="fa fa-twitter">64</a></li>
+											<li><a href="#" class="fa fa-facebook">128</a></li>
+										</ul>-->
+									</div>
+									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
+									<p>
+										Different OSs contain different security flaws. Is there a difference between Linux and Windows target hosts? Similarities? Any vulnerable services discovered? Is your system suitably hardened?
+									</p>
+									
+								</article>
+								
+								
+
+							<!-- Pager -->
+								<div class="pager">
+									<!--<a href="#" class="button previous">Previous Page</a>-->
+									<div class="pages">
+										<a href="#" class="active">1</a>
+										<a href="#">2</a>
+										<a href="#">3</a>
+										<a href="#">4</a>
+										<span>&hellip;</span>
+										<a href="#">20</a>
+									</div>
+									<a href="#" class="button next">Next Page</a>
+								</div>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					
+						<!-- Logo -->
+							<div id="logo">
+								<h1>ICT4D</h1>
+							</div>
+					
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a href="index.html">Lab 1</a></li>
+									<li class="current_page_item"><a href="part1.html">Part 1: Security Assessment</a></li>
+									<li><a href="part2.html">Part 2: Data Confidentiality</a></li>
+									<li><a href="part3.html">Part 3: Security Hardening</a></li>
+									<li><a href="part4.html">Part 4: Safe Web Browsing</a></li>
+								</ul>
+							</nav>
+
+						<!-- Text -->
+							<section class="is-text-style1">
+								<div class="inner">
+									<p>
+										<strong>Lab 1</strong> focuses on assessing and hardening a system with respect to security requirements
+									</p>
+								</div>
+							</section>
+					
+						
+						<!-- Copyright -->
+							<div id="copyright">
+								<p>
+									&copy; 2014 - CS2Lab,<a href="http://dsv.su.se">DSV</a><br />
+								</p>
+							</div>
+
+					</div>
+
+			</div>
+
+	</body>
+</html>
