@@ -197,6 +197,7 @@
 										Perform the following tasks.
 									</p>
 									<ol class="style1">
+										<li>Create a text file and save it after populating it with some text data. You can examine the contents of the file with a hex editing tool like HxD. Launch the HxD application and click on the Open menu option under the File menu. Select the file and examine its contents. The text contents can be easily accessible by anyone that can access the system (e.g. leaving the physical system unattended for a period of time or an attacker managing to get remote access to the system). In order to protect the confidentiality of the data it is a good practice to encrypt them. There are several cryptographic solutions that vary in the scope (e.g. application specific like Office password-protected files, Operating System specific like Microsoft BitLocker or platform-agnostic like TrueCrypt). 
 										<li>Run the TrueCrypt application. A shortcut to the application can be found on the Desktop.</li>
 										<li>Click on the Create Volume button, select the 'encrypted file container' option and press Next.</li>
 										<li>Select the 'Standard TrueCrypt volume' and press Next.</li>
@@ -208,7 +209,7 @@
 										<p class="image image-centered"><img src="images/truecrypt-container.PNG" alt=""></img></p>
 										<li>Return to the TrueCrypt application and click on the 'Select File...' button.Select the previously generated file, press Open, select a Drive letter from the top pane and finally press the Mount button. Enter the specified password and press OK. Now the container file has been mounted as an extra 'virtual' disk to your system as shown below</li>
 										<p class="image image-centered"><img src="images/truecrypt-mount.PNG" alt=""></img></p>
-										<li>Navigate to the designated location and create a new text file and save it after populating it with some text data.</li>
+										<li>Navigate to the designated location.</li>
 										<li>When finished, dismount the container file and close the TrueCrypt application</li>
 										<li>You can examine the contents of the container file with a hex editing tool like HxD. Launch the HxD application and click on the Open menu option under the File menu. Select the TrueCrypt generated container file and examine its contents.</li>
 									</ol>
@@ -234,7 +235,9 @@
 										<li>
 										What is the weakest link in terms of security in the above technical solution that could allow unauthorized access to the confidentiial data?
 										</li>
-
+										<li>
+										What would be a good case for encrypting the system partition where the Operating System and most of the user's data are stored?
+										</li>
 									</ul>
 								</article>
 
