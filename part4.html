@@ -105,7 +105,7 @@
 									- Web Browser Plugins: <br />
 									<!--<p class="image"></p>--> 
 										&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;- NoScript  &nbsp; &nbsp;<img src="images/NoScript_Logo.png" height="48" width="48"> &nbsp; &nbsp;<br />
-										&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; - Collusion/Disconnect/Ghostery  &nbsp; &nbsp;<img src="images/chrollusion.png" height="48" width="48"> &nbsp; &nbsp;
+										&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; - <!--Collusion/Disconnect-->Ghostery  &nbsp; &nbsp;<!--<img src="images/chrollusion.png" height="48" width="48"> &nbsp; &nbsp;-->
 										<img src="images/ghostery_logo.png" height="48" width="48"> &nbsp; &nbsp;<br />
 										&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; - FlagFox  &nbsp; &nbsp;<img src="images/5791-64.png" height="48" width="48">
 								</article>
@@ -210,9 +210,56 @@
 										<li>We will first disable the NoScript functionality in order to demonstrate how the web browser would behave if scripts (such as Javascript
 											were allowed to run freely in the wild.) To do this, locate the "NoScript" icon in the status bar. Click on it and find the option "Allow Scripts Globally (dangerous)". 
 											This will deactivate the NoScript functionality for all web domains.</li>
-										<li>Navigate to the website: "http://www.insecurelabs.org/Task". Click on the "Task1" link. In the search box input the following script:</li>
-										<p>&lt;script&gt;alert(&quot;XSS flaw here&quot;)&lt;/script&gt</p>
-										<p>Press the search button.</p>
+										<li>Navigate to the website: "http://www.insecurelabs.org/Task". Click on the "Task1" link. In the search box input the following script (including the script tags):</li>
+										<p>"&lt;script&gt;alert(&quot;XSS flaw here&quot;)&lt;/script&gt"</p>
+										<p>Press the search button.</p> <!--The result of this should be that the script runs and a dialog box pops up with the text "XSS flaw here". This demonstrates that the text input
+											form is not secure and can allow for unwarranted execution of scripts.--> 
+										<ul>
+											<li type="square">What do you observe? Why do you think this happened? 
+											Is this a security problem, or is it desired functionality of the search function?</li>
+										</ul>
+										<li>Turn on the NoScript plugin by navigating to the NoScript icon, clicking on it and selecting the "Forbid Scripts Globally (advised)" option.
+											Repeat Step 3 and press the "Search" button. What do you observe? Explain your observation.</li>
+											
+										<li>In order to prevent interference in the next steps from the NoScript plugin, disable it first, as is explained in Step 2.</li>
+										<li>The next plugin we will try out is the Disconnect plugin (sometimes also referred to as Collusion). This plugin is used to keep track
+											and control the information that websites use to track your web usage.</li>
+											
+										<li>To install it, navigate to the URL
+											"https://addons.mozilla.org/en-US/firefox/addon/disconnect/" and click on the green "Add to Firefox" button. When the "Software installation" dialog pops up,
+											click on the "Install Now" button. (Restart Firefox if prompted to.)</li>
+										<li>When Ghostery runs the first time it will open up a page where it will prompt you to put in some basic options. Read the information 
+											presented to you and use your intuition</li>
+										<li>Find the Ghostery icon (probably somewhere on the left side of your toolbar. Click on it and follow the tutorial)</li>
+										<li>Once you've finished doing the basic setup and following the tutorial, your Ghostery plugin should be set up. Navigate to different websites
+											that are known to track their users such as Amazon.com, Google.com (perform some searches), Facebook.com, imdb.com ... etc (You can try others. You are not limited to these.)</li>
+										<ul>
+											<li type="square">Note down your observations from the different websites and which trackers they use. Try blocking some of the trackers and see if anything changes.</li>
+										</ul>
+										<li>You can choose to leave the plugin enabled or you can disable it when you proceed to the next step.</li>
+										<li>The next plugin you will install is the "FlagFox" plugin. This plugin is used to show you the flag of the country from which
+											a server responded to your initial web request. It also has the capability of showing you the IP address of the server and it's
+											approximate geo-location
+											<p>The plugin can be found at: https://addons.mozilla.org/en-US/firefox/addon/flagfox/</p>
+											<p>Install the plugin on Firefox and restart the web browser if prompted to do so</p></li>
+										<li>Navigate with your browser to different websites and notice the flag icon in the Right-hand corner of the address bar.
+											<p>Some of the websites you can try include:
+												<ul>
+													<li>dsv.su.se</li>
+													<li>www.bbc.com</li>
+													<li>www.google.com</li>
+													<li>www.facebook.com</li>
+													<li>wikileaks.org</li>
+													<li>http://www.weibo.com</li>
+													<li>http://www.news24.com</li>
+												</ul>
+												</p></li>
+										<li>Click on the flag icon in the address bar once you have navigated to any (or all ) of the websites. Notice that it redirects you
+											to the "geoip.flagfox.net" service that gives you some information about the location of the webserver and it's IP address.</li>
+										<ul>
+											<li type="square">From a security perspective, briefly describe / postulate why such information could be useful. What other
+												useful information can you gather from this page?</li>
+										</ul>
 										
 										
 										
