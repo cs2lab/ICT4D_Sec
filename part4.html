@@ -281,8 +281,32 @@
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<ol class="style1">
 										<li>In this task you will learn how to perform basic web server enumeration, which in simpler terms means gathering information
-											about the webserver, the domain and the owners of the domain.</li>
-										<li>Open the Firefox Web browser. Browse to the following link: "https://addons.mozilla.org/en-US/firefox/addon/noscript/"</li>
+											about the webserver, the domain and the owners of the domain. In the previous task we installed a plugin called "FlagFox".
+											This plugin enabled us to see information such as the IP address, geographic location and even the ISP that the web server is running from.</li>
+											We will now learn how to use other tools/commands to give us such similar information.
+										<li>The first command we will make use of is the ping command. To use this command open up the "Command Prompt" (in MS Windows), or the terminal (in Linux). 
+											Type in the command "ping www.google.com". The command is in the format "ping <domainName>" or "ping <ipAddress>". Observe the output of the command. 
+											Ping a couple of more web server domain names e.g. facebook.com, amazon.com, dsv.su.se. Notice the IP addresses that respond</li>
+										<ul>
+											<li type="square">What does the ping command do? What information from the output of the command (i.e. the webserver response) can be useful in
+												gathering information about the webserver? Briefly explain why it could be useful.</li>
+										</ul>
+										<li>Perform the ping command to "dsv.su.se". Identify the responding web server's IP address. Verify this by using the "nslookup" command, i.e.
+											"nslookup <domainName>", where you replace "<domainName>" with the domain name who's IP address you are trying to determine. Once you have
+											determined the IP address of the web server that you're trying to gather information about, open the page "http://whois.domaintools.com/" and input the
+											IP address in the "Domain and IP WhoIs LookUp Tool" input field. Click on the "Lookup" button and observe the output that is returned from this
+											webpage. Repeat the Lookup process now only using the domain name and observe the information that you get (If there are tabs, go through the
+											information that is contained in the other tabs). You can try this procedure with other domain names / IP addresses</li>
+										<ul>
+											<li type="square">What does the "nslookup" command do? What kind of useful information can you gather from the WhoIs LookUp tool? How could an attacker
+											possibly use this information?</li>
+										</ul>
+										<li>The next command we will make use of is the "traceroute" command ("tracert" on Windows). Type the command "traceroute dsv.su.se" 
+											(or on Windows "tracert dsv.su.se"). Observe the output, particularly the hostnames and the IP addresses that appear.</li>
+										<ul>
+											<li type="square">What does the "tracert" command do? What kind of information can you infer from the output of this command?
+											How can an attacker possibly make use of this information?</li>
+										</ul>
 
 									</ol>
 									
