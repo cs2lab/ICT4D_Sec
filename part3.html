@@ -57,7 +57,7 @@
 										</ul>-->
 									</div>
 									<p>
-										Welcome to the Third part of the assignment on how to harden a system with respect to its security posture
+										Welcome to the Third part of the assignment on how to harden a system with respect to its security posture. Systems are often found with default or sloppy configuration settings that reduce the system's security. Various steps can be taken to enhance the system's security, a process often called 'hardening'. 
 									</p>
 									
 								</article>
@@ -65,7 +65,7 @@
 							<article class="is-post is-post-excerpt">
 									<header>
 										<!--<h2><a href="#">Lab Goals</a></h2>-->
-										<span class="byline">The objectives of this assignment</span>
+										<span class="byline">The objectives of this part</span>
 									</header>
 									<div class="info">
 										<span class="date"><span class="month">Obje</span> <span class="month">ctives</span></span>
@@ -79,9 +79,9 @@
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
 										<ul>
-										<li>- Learn how to harden the security of a system</li>
+										<li>- Learn how to reduce the attack surface of a system</li>
 										<li>- Learn how to apply patches in a system</li>
-										<li>- Learn about security-related settings and features of an Operating System like Windows</li>
+										<li>- Learn about common security-related settings and features of an Operating System like Windows such as firewalls and antivirus</li>
 										</ul>
 									</p>
 								</article>
@@ -129,14 +129,30 @@
 										Perform the following tasks.
 									</p>
 									<ol class="style1">
-										<li>Navigate to the Control Panel (accessible through the Start button) and click on the System and Security option. Then, click on the Windows Update option. The Operating System feature that is taking care of updating the system with security as well as other software updates has been turned off. Press the 'Turn on automatic updates' button in order to activate this feature. The system will start prompting you with notifications of software updates that your system is lacking. In the context of this lab assignment, you are requested to wait until you install all of the updates but instead you can proceed on the following steps.</li>
-										<li>Return to the 'System and Security' page of the Control Panel and click on the Windows Firewall option. The firewall has also been deaativated. You can press the 'Use recommended settings' button in order to activate the firewall with a set of predefined rules</li>
-										<li> </li>
+										<li>Let us start by employing an automated method for assessing the current system state in terms of security. Open the 'Microsoft Baseline Security Analyzer' tool that can be found on your Desktop. Click on the 'Scan a computer' option and review the scan options. You can use the default options and proceed by clicking on the 'Start Scan' button. Review the results regarding the current security status of the system. 
+										<li>Navigate to the Control Panel (accessible through the Start button) and click on the System and Security option. Then, click on the Windows Update option. The Operating System feature that is taking care of updating the system with security as well as other software updates has been turned off. Press the 'Turn on automatic updates' button in order to activate this feature. The system will start prompting you with notifications of software updates that your system is lacking. In the context of this lab assignment, you are NOT requested to wait until you install all of the updates but instead you can proceed on the following steps.</li>
+										<p><ul>
+											<li type="square">Why is it important to keep the system up-to-date with security patches?</li>
+											<li type="square">Can you describe a case where a system update may create more security issues than solving?</li>
+											<li type="square">Is the update feature provided by the Operating System enough to protect the system or additional actions may be needed and why?</li>
+										</ul></p>
+										<li>Return to the 'System and Security' page of the Control Panel and click on the Windows Firewall option.The firewall is responsible of inspecting and ensuring that only allowed network connections are established by the system both in terms of outbound network conversations (e.g. the system accessing a Web site) as well as inbound (e.g. a remote user accesses a system's service). The rules that the firewall has to enforce are mostly defined in terms of networking concepts such as IP address and TCP/UDP ports but with respect to certain applications as well in the case of host-based firewall software. The firewall has also been deactivated. You can press the 'Use recommended settings' button in order to activate the firewall with a set of predefined rules. You can click on the Advanced Settings menu option on the left and examine some of the default inbound and outbound rules. As an example, let us add a new rule that disallows the Internet Explorer application from connecting to the Internet. Click on the Outbound Rules and select the 'New Rule...' option. Select the Program menu option and after Next use the Browse button to locate the iexplore executable that is located under the C:\Programm Files\Internet Explorer path. After Next select the 'Block the connection' option, click Next and Next and finally specify a name for the rule and click on Finish. Attempt to visit a website with both the Internet Explorer and the Firefox browsers and notice the difference. In the end, you can delete the Rule through the Delete option.</li>
+										<p class="image"><img src="images/deleteRule.png" alt=""/></p>
+										<p><ul>
+											<li type="square">Consider a system that is connected to the Internet but the organization wants to use it as a Web server only for its employees. How can a firewall be employed to support such a case?</li>
+											<li type="square">In most cases, firewalls are configured to block unwanted inbound connections to system ports and services but little attention is given to setting up a policy for outbound connections? How can outbound connections enhance the security of the system?</li>
+										</ul></p>
+										
 										<li>Protecting the system from files and applications of malicious intent is a challenging task. There are a number of specialized programs that are able to scan the system in order to identify and eradicate instances of malware and can even protect you on real time as you download and open files downloaded from the Web or from email attachments. Navigate again to the Control Panel and select the View by Small Icons option on the top right of the window. Click on the Windows Defender option.Click on the Scan tooltip in the top menu in order to perform a quick scan.</li>
 										<li>After the scanning process finishes, a malicious file, purposefuly copied to your system, must have been identified. Click on the 'Review detected items' in order to display more information about the detected file. You can proceed by cleaning the system from the malicious file</li>
 										<li>Click on the Tools menu option on the top and then select Options. Enable the 'Automatically scan my computer' in order to configure the tool to perform an antimalware check of the system periodically. Switch to the Real-time protection menu option on the left in order to configure the tool to scan files downloaded over the Web. Optionally, in the Advanced menu option, you can also enable scanning e-mail attachments as well as removable drives such as USB sticks. Press the Save button to store your settings.</li>
 										<p class="image image-centered"><img src="images/windowsdefender.PNG" alt=""></img></p>
 										<li>Open Internet Explorer and visit the following URL: http://www.eicar.org/85-0-Download.html and download the eicar.com file. This file is a designated test file for checking antimalware programs. You should receive a notification by your system that a malicious file has been detected. Proceed by cleaning the system.</li>
+										<p><ul>
+											<li type="square">Why is it important to have an antivirus installed on a system?</li>
+											<li type="square">Why is it important to keep the antivirus software updated?</li>
+											<li type="square">What can be some limitations or concerns when using antivirus software?</li>
+										</ul></p>
 										<li></li>
 									</ol>
 								</article>
