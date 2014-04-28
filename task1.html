@@ -47,7 +47,7 @@
 											need a byline.
 										-->
 										<h2><a href="#">Part 1</a></h2>
-										<span class="byline">Malware Distribution</span>
+										<span class="byline">Securing Communications</span>
 									</header>
 									<div class="info">
 										<span class="date"><span class="month">Intro</span> <span class="month">duction</span></span>
@@ -63,7 +63,7 @@
 									</div>
 									
 									<p>
-										Welcome to the First part of the assignment that demonstrates how a system can get compromised by downloading and executing unsafe files from the Internet.
+										Welcome to the First part of the assignment that demonstrates why a message's confidentiality and integrity needs to be protected when transmitted over an insecure medium such as the Internet.
 									</p>
 									
 								</article>
@@ -85,7 +85,8 @@
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
 										<ul>
-										<li>By the end of this lab assignment, you will understand the differences between the attack surface of a vulnerable and a more secure system.</li>
+										<li>Better understand how cryptography and netowrk communications function in the background</li>
+										<li>Comprehend the differences between symmetric and asymmetric cryptography.</li>
 										</ul>
 									</p>
 								</article>
@@ -105,22 +106,16 @@
 										</ul>-->
 									</div>
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
-									<h4>OpenVAS</h4>
-									<p class="image"><img src="images/openvas_logo.png" alt=""/></p>
+									<h4>OpenSSL</h4>
+									<p class="image"><img src="images/openssl-logo.png" alt=""/></p>
 									<p>
-										This tool is a so-called “vulnerability scanner” which looks for possible security holes in a computer system or in a network of computers. Vulnerability scanners are used in a preventive way in order to test how secure the system is. It can thus be used by both security administrators and “hackers”.</p>
+										OpenSSL is a software library that implements several cryptographic algorithms and associated tools and is a core component of several security solutions that rely on it such as configuring web and applications servers to support SSL/TLS.</p>
 
-<p>OpenVAS consists of a server and a client program. The server can be accessed either through a web interface or a desktop or command-line interface. In the context of the lab, there is one dedicated server acting as the OpenVAS server and its IP address is: 172.16.1.128.</p> 
-
-<p>The OpenVAS server has its own user database, where each user’s profile may have different settings and restrictions. This may allow different users to share a single server for a whole network and different administrators testing their assigned part of the network.
-									</p>
-									<h4>Microsoft Attack Surface Analyzer</h4>
-									<p class="image"><img src="images/Attack-surface-analyzer.png" alt=""/></p>
+<p>OpenSSL is mostly used in the Linux world but for simplicity reasons we will use it in our existing dedicated Windows VM.</p> 
+									<h4>Wireshark</h4>
+									<p class="image"><img src="images/Wireshark_Icon.png" alt=""/></p>
 									<p>
-										Attack Surface Analyzer is a tool offered by Microsoft targeting its series of Windows Operating Systems. The tool can take a snapshot of the current system state that can be used as a baseline and later compared against future changes of the system that may be caused by e.g. additional software installations. 
-									</p>
-									<p>
-										IT Security professionals but users as well can utilize this application in order to assess the changes in the Attack Surface of their system that a new installation causes.
+										Wireshark is a network traffic capture and protocol analysis tool. It allows to persist the network traffic as it flows among end hosts and intermediate networking devices (switches, routers, network firewalls etc.). It can also process the captured bits and reconstruct and display the information back into the respective network protocol headers and payloads.
 									</p>
 								</article>
 						
@@ -141,21 +136,53 @@
 									</div>
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
-										Perform the following tasks.
+										We have installed on your system, an OpenSSL binary distribution for the Windows OS retrieved from https://www.openssl.org/related/binaries.html. Perform the following tasks.
 									</p>
 									<ol class="style1">
-<li>										Open your browser and point it to the following URL: http://172.16.1.128:9392. Login with ‘grpX’ as the username where ‘X’ stands for your group number and your group password.</li>
-<li>On the top menu bar of the web interface, you can navigate through various possible actions. Click on the ‘Configuration->Targets’ menu option and then on the star button in order to create a new target. Specify a descriptive name for your target and also the IP address of the target host which is the IP addresses of your assigned VMs. You can either generate your own port list or just use the default. Finally, click on the ‘Create Target’ button. </li>
-<p class="image"><img src="images/openvas-target.png" alt=""></img></p>
-<li>Navigate to the ‘Scan Management->New Task’ menu option. Specify a name for the task, select your preferred scan configuration and specify the target. Click on the ‘Create Task’ button.</li>
-<p class="image"><img src="images/openvas-task.png" alt=""></img></p>
-<li>In the ‘Tasks’ screen that appears, locate the row that your newly created task has been assigned and click on the ‘Start’ button.</li>
-<li>Wait until the task finishes. You can check its progress using the Refresh button.</li>
-<li>After the task has completed, click on the links generated for the completed Task. Examine the aggregated results per vulnerability level and click on the Details icon to further examine the results by downloading the generated report. </li>
-<p class="image"><img src="images/openvas-report.png" alt=""></img></p>
-<li>Look through the report – see what results you obtained.  Now, return to the web interface and try creating some new tasks with different scan configurations and experiment with different settings.  You can also try running scans on more than one target.</li>
-									</ol>
-								</article>
+<li>Create a text file in the desktop and name it after your surname as follows 'student_surname.txt'. and fill it with some English text (e.g. a news portal).</li>
+<li>Let us consider a fictional scenario where you represent Alice and you want to communicate with another entity, called Bob, over the network. Bob has created a simple Web page that accepts files to be uploaded.Use the browser and visit the URL 'http://cs2lab.dsv.su.se/sec/'</li>
+<li>Open up Wireshark. Highlight the 'Local Area Connection' network interface and press the Start button.
+<p class="image"><img src="images/wireshark-capture.jpg" alt=""></img></p>
+<li>You will notice captured packets filling up the main screen of Wireshark.</li>
+<li>Return back to the webpage you were previously. Click on the link 'Upload a File' and upload the file you had just created.</li>
+<li>Return to the Wireshark application and press the Stop button (Capture -> Stop). In the filter bar type HTTP (the core protocol for the Web) and press Apply.</li>
+<li>You should be able to notice an HTTP POST request that was submitted to the web server's /sec/upload.php URL.Highlight the entry by clicking on it and then right-click and select the 'Follow TCP Stream' option.You should be able to notice the clear text of the document you have uploaded to the web server</li>
+<ul>
+	<li type="square">Why is it a really bad practice to submit condifential data in a non-encrypted form? Why protocols such as HTTP should be replaced whenever possible by others that support encryption (e.g. HTTPS)? </li>
+</ul>
+<li>Visit the web page http://decode.org and paste the text that you have filled in the text document previously and press the Encrypt/Decrypt button. This web application employs the ROT13 cipher, a cipher similar to the Caesar's one where the English characters are instead substituted by the letter shifted 13 places in the English alphabet.</li>
+<li>Copy the encrypted text and paste it in a new text file and name it as follows 'student_surname-rot13.txt'</li>
+<li>Repeat the procedure of starting the network traffic capturing with Wireshark and uploading the new file to Bob's web server.</li>
+<li>Analyze the captured traffic again and notice that the data uploaded are encrypted, although using a weak algorithm</li>
+<ul>
+	<li type="square">Why employing a weak encryption algorithm such as ROT13 is also a bad practice that can lead to confidentiality breaches? How can an attacker break a ROT13 encrypted message?</li>
+</ul>
+<li>Press on the Start button and then type in the Search field 'cmd' that stands for the Windows command line interpreter.Click on the cmd icon to open a new command line window. Type 'cd C:\OpenSSL-Win32\bin\ in order to navigate to the OpenSSL folder.'</li>
+<p class="image"><img src="images/openssl-cmd.jpg" alt=""></img></p>
+<li>Type 'openssl -version' and examine the output of the supported commands and cryptographic algorithms.</li>
+<li>Type 'openssl enc -aes-256-cbc -p -in C:\Users\student\Desktop\student_surname.txt -out C:\Users\student\Desktop\student_surname-aes.txt -K key -iv iv'. Replace the student_surname placeholder in the filenames with your own surname. The key placeholder has to be replaced with a string of 64 hexadecimal symbols that represents the 32-byte secret key. (e.g. 000102030405060708090A0B0C0D0E0F000102030405060708090A0B0C0D0E0F) and iv has to be replaced by a string of 32 hexadecimal symbols that represents the 16-byte initialization vector (e.g. 000102030405060708090A0B0C0D0E0F)</li>
+<li>You can open the generated encrypted file to verify that the contents are indeed encrypted (random-looking).You can also repear the process of capturing the network traffic with Wireshark and uploading it to Bob's web server.</li>
+<ul>
+	<li type="square">Why employing a longer key (e.g. AES-256 instead of AES-128) improves security (although may reduce performance)?</li>
+	<li type="square">What is a practical limitation of cryptosystems with symmetric algorithms with respect to the exchange of the symmetric key between the communicating entities?</li>
+	<li type="square">How many attempts, at maximum, would an attacker need in order to test all the possible keys against an AES-256 encrypted message?</li>
+</ul>
+<li>Asymmetric cryptography operates by requiring an entity to have two keys, a private and a public, that share a mathematical relationship between them and are called the keypair.</li>
+<li>Back on the command line window with OpenSSL, you can create a key pair by issuing the command 'openssl genrsa -out C:\Users\student\Desktop\myRSA.key 2048'</li>
+<li>You can extract additional information (prime numbers, modulus, exponents) about the generated keypair by issuing the command 'openssl rsa -text -in C:\Users\student\Desktop\myRSA.key'</li>
+<li>A keypair is always employed in turns meaning that if the one key (e.g. the public) is used for encryption then only the other one can be used to decrypt the message.The private key must always remain secure from being accessed by unauthorized entities while the public key is assumed to be freely distributed.</li>
+<li>Extract the public key from the keypair by issuing the command 'openssl rsa -in C:\Users\student\Desktop\myRSA.key -pubout > C:\Users\student\Desktop\student_surname.pub' where the student_surname placeholder must be replaced by your surname.</li>
+<li>Generate a new text file, named mysecret_student_surname.txt that includes a small message (an RSA key of 2048 bits is based on a modulus of 256 bytes thus the message has to be less than 245 bytes/characters given some additional padding needs). Replace the student_surname placeholder with your surname.</li>
+<li>Return to the main page of Bob's site. In order to encrypt the file so as only Bob can read it, we need Bob's public key. You can download Bob's public key using the link on the top right of Bob's webpage. Make sure to right click over the link and select the 'Save Link As...' option. Save the file on the VM's desktop. </li>
+<li>Encrypt the file by issuing the following command on the open command prompt window 'openssl rsautl -encrypt -inkey C:\Users\student\Desktop\server.pub -pubin -in C:\Users\student\Desktop\mysecret_student_surname.txt -out C:\Users\student\Desktop\mysecret_student_surname.rsa'</li>
+<li>Return to Bob's web page and click on the link 'Upload a Confidential File'. Select the previously generated mysecret_student_surname.rsa file and click Submit. The server should report back with the decrypted message which indicates that it was able to successfully decrypt it with its private key.</li>
+<ul>
+	<li type="square">Why is it very important for the private key to be kept secure against unauthorized access?</li>
+</ul>
+<li></li>
+<li>Back on the Command Prompt console execute the following command 'openssl rsautl -decrypt -inkey C:\Users\student\Desktop\server.pub -in C:\Users\student\Desktop\secret.rsa -out C:\Users\student\Desktop\secret.txt'.</li>
+</ol>
+</article>
 								
 								<article class="is-post is-post-excerpt">
 									<header>
@@ -254,7 +281,7 @@
 							<nav id="nav">
 								<ul>
 									<li><a href="index2.html">Lab 2</a></li>
-									<li class="current_page_item"><a href="task1.html">Part 1: Malware Distribution</a></li>
+									<li class="current_page_item"><a href="task1.html">Part 1: Secure Communications</a></li>
 								</ul>
 							</nav>
 
