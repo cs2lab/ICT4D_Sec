@@ -46,8 +46,8 @@
 											if they get too long. You can also remove the "byline" span entirely if you don't
 											need a byline.
 										-->
-										<h2><a href="#">Part 2</a></h2>
-										<span class="byline">Exploiting Vulnerable Systems</span>
+										<h2><a href="#">Part 3</a></h2>
+										<span class="byline">Analyzing Malware</span>
 									</header>
 									<div class="info">
 										<span class="date"><span class="month">Intro</span> <span class="month">duction</span></span>
@@ -63,7 +63,7 @@
 									</div>
 									
 									<p>
-										Welcome to the Second part of the assignment that demonstrates how a vulnerable system can be remotely exploited and what an attacker may be able to do.
+										Welcome to the Third part of the assignment that demonstrates how an administrator may perform some basic tasks in order to detect and analyze a suspicious piece of software. Malware is constantly getting more sophisticated bypassing traditional defensive mechanisms such as antiviruses and intrusion detection systems. An administrator or specialized security professional, in properly sandboxed and secure environments can perform dynamic analysis of malicious software (i.e. execute it) in order to monitor the actions it performs (e.g. creating/accessing files, establishing external network communications etc.). A malicious file can reach a system through various means such as download from a web page or an email attachment by an unsuspected user, social engineering techniques or even direct exploitation of a software vulnerability present on the system. 
 									</p>
 									
 								</article>
@@ -85,8 +85,8 @@
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
 										<ul>
-										<li>Understand the process of penetration testing for detecting vulnerable systems on a network.</li>
-										<li>Gain an insight on how an attacker is able to directly and remotely exploit and gain control of a vulnerable system.</li>
+										<li>Understand the process of dynamic analysis of malware</li>
+										<li>Gain an insight on how security professionals examine and analyze new threats and malware infections.</li>
 										</ul>
 									</p>
 								</article>
@@ -106,10 +106,10 @@
 										</ul>-->
 									</div>
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
-									<h4>Metasploit</h4>
-									<p class="image"><img src="images/metasploit_logo.png" alt=""/></p>
+									<h4>SysInternals</h4>
+									<p class="image"><img src="images/sysinternals.jpg" alt=""/></p>
 									<p>
-										Metasploit is a penetration testing software that comes both in commmunity and professional versions. It is well known for its modular architecture as well as the ever-extending list of exploits to past disclosured vulnerabilities and payloads that enable the attacker to perform sophisticated actions against a compromised system</p>
+										SysInternals is a set of tools that can be used by Windows administrators for diagnostic, troubleshoot and security purposes. They provide features for an in-depth examination of how the Windows OS, user processes, the system's disk and memory function and are often employed in malware analysis efforts due to their advanced capabilities.</p>
  
 								</article>
 						
@@ -130,38 +130,23 @@
 									</div>
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
-										We have installed on your system, the Metasploit Windows version that can be downloaded from <a href="http://www.metasploit.com">http://www.metasploit.com. In case you run in problems using Metasploit, make sure that the Windows Firewall and Defender are disabled.</a>
+										We have copied on your VM's Desktop, an executable file named payload.exe. This file has been created by the Social Engineering Toolkit (SET - https://www.trustedsec.com/downloads/social-engineer-toolkit/) and is the result of the several methods the tool provides to create malicious file and spread them to victims (e.g. over web or email).</a>
 									</p>
 									<ol class="style1">
-<li>Open your browser and access Metasploit by navigating to <a href="https://localhost:3790" target="_blank">https://localhost:3790</a>. If prompted, accept the self-signed digital certificate of the web application and continue.</li>
-<li>Login with the credentials Username:student Password:ict4dsec!</li>
-<li>Click on the New Project button</li>
-<p class="image"><img src="images/metasploit-newproject.png" alt=""></img></p>
-<li>Fill in a project name and optionally description of your choice. Make sure that the network range is 192.168.0.1-254. Complete by pressing the 'Create Project' button.</li>
-<li>Click on the Scan button. In the next screen, enter the IP address of 192.168.0.50 as the Target Address (this is the vulnerable system you have encountered in Assignment 1.Press the 'Launch Scan' button to initiate the scanning process.Wait until the task finishes.</li>
-<li>Navigate to the Analysis -> Hosts menu option.</li>
+									
+<li>On your VM's Desktop, there is a folder named SysinternalsSuite. Open the folder, keep pressed the Left Shift keyboard button and  right click in an empty area of the folder and then select the option 'Open command window here'.This will give us a command prompt to the specific folder so as to execute some of the command-line applications later on</li>
+<p class="image"><img src="images/openprompt.png" alt=""></img></p>
+<li>Switch back to the Sysinternals folder and double click the procmon (Process Monitor) application in order to run it.</li>
+<li>In the Process Monitor application, click on the Filter toolbar icon and then Include a new rule that the process name is payload.exe and then Add it and finally Apply.</li>
+<p class="image"><img src="images/procmon_capture.png" alt=""></img></p>
+<li>Double-click the payload.exe executable located in your Desktop. After agreeing to run it, the screen of the procmon application should start getting filled with entries.You can use the toolbar icons on the right to isolate file system, network, registry and process activity related events.</li>
 <ul>
-	<li type="square">What Operating System does the system seem to have? How can the scanning tool be able to identify the Operating System of the remote system?</li>
+	<li type="square">Does the executable attempt to communicate to another system?</li>
 </ul>
-<li>Switch to the Services tab. The tool reported the open ports on the remote system as well as the services (even with the versions) that are running.</li>
-	<ul>
-	<li type="square">How an attacker can leverage this information in order to exploit a system?</li>
+<li>An antivirus engine may not always be able to detect a new type of malware or one that is intentionally made difficult to analyse (e.g. encrypted, obfuscated etc.).It is a good practice to examine a suspicious file against as many antivirus engines as possible given that not all antivirus software perform equally well. One such online service is <a href="https://www.virustotal.com/" target="_blank">VirusTotal</a> where one can upload a file and have it checked by almost all known antivirus engines.</li>
+<ul>
+	<li type="square">Submit the file and check the results. Did it have a high or low detection success ratio?</li>
 </ul>
-<li>Notice that the FTP service is backed up by vsFTPd version 2.3.4. Google a little bit about this specific version of the specific FTP software? Thinking as an attacker, can you find anything of interest?</li>
-<li>Switch to the Modules -> Search... menu option and type in the 'vsftpd' kkeyword.A result should pop up indicating a module specially designed for exploiting this specific vulnerability.</li>
-<li>Click on the title of the module in order to be presented with additional information.Specify the 192.168.0.50 IP address as the target one. In the payload option, select the Meterpreter option and in the Connection type select the Reverse one. Click on the 'Run Module' button.</li>
-<li>If the exploit has been successful and the payload injected, you should have a new Session in the menu. Click on the Sessions tab </li>
-<p class="image"><img src="images/metasploit-success.jpg" alt=""></img></p>
-<li>Click on the 'Session 1' label. Click on the Command Shell option. You now have terminal access to the remote system and you are able to issue various commands.</li>
-<li>Type the command 'pwd' in order to print the current working directory. The result '/' stands for the root directory in Linux.Create a folder after your last name as proof you have reached up to this step by issuing the command 'mkdir /<student_name>' and then type 'ls' to list the newly created folder.</li>
-<li>Return back to the previous web page and switch to the post-exploitation modules. Locate the post/linux/gather/hashdump module and click on its label.Click the 'Run Module' button over the selected existing session.You should be able to see in the screen, the user accounts of the remote system as well as their hashed passwords.The tool automatically stores the extracted information in your VM and can be found at the reported location. Copy the file to your VM's Dekstop</li>
-<p class="image"><img src="images/metasploit-loot.png" alt=""></img></p>
-<li>You can use a password-cracking tool such as John the Ripper in order to recover the passwords of the accounts present on the compromised system. Open a command prompt and navigate to the appropriate folder by issuing the command 'cd C:\Users\student\Desktop\john179j5\run\' and then issue the command 'john <hash_file> where <hash_file> stands for the previously tool-generated file (it is easier to drag and drop the file to the command shell in order to load its full path and file name).Soon,the tool should be able to recover the passwords (except of the root's one)</li>
-	<ul>
-	<li type="square">Although not being able to break the root password, the attacker is currently connected under the context of the root account (Hint: Use the 'whoami' command at the shell of the compromised system. Why is this possible and how can an administrator avoid this? </li>
-	<li type="square">In the compromised system, we have aadded a file that is supposed to contain confidential data. Besides the attacker being able to read its contents, what could he do in order to exfiltrate the data to an external system?</li>
-</ul>
-<li>Make sure to return to the Sessions menu option and click on the Cleanup button in order to release the active session for the other students.</li>
 </ol>
 </article>
 								
@@ -197,8 +182,8 @@
 								<ul>
 									<li><a href="index2.html">Lab 2</a></li>
 									<li><a href="task1.html">Part 1: Secure Communications</a></li>
-									<li class="current_page_item"><a href="task2.html">Part 2: Exploiting Vulnerable Systems</a></li>
-									<li><a href="task3.html">Part 3: Analyzing Malware</a></li>
+									<li><a href="task2.html">Part 2: Exploiting Vulnerable Systems</a></li>
+									<li class="current_page_item"><a href="task3.html">Part 3: Analyzing Malware</a></li>
 								</ul>
 							</nav>
 
