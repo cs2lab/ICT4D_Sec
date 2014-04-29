@@ -85,7 +85,7 @@
 									<!--<a href="#" class="image image-full"><img src="images/fotogrph-dark-stairwell.jpg" alt="" /></a>-->
 									<p>
 										<ul>
-										<li>Better understand how cryptography and netowrk communications function in the background</li>
+										<li>Better understand how cryptography and network communications function in the background</li>
 										<li>Comprehend the differences between symmetric and asymmetric cryptography.</li>
 										</ul>
 									</p>
@@ -145,6 +145,7 @@
 <p class="image"><img src="images/wireshark-capture.jpg" alt=""></img></p>
 <li>You will notice captured packets filling up the main screen of Wireshark.</li>
 <li>Return back to the webpage you were previously. Click on the link 'Upload a File' and upload the file you had just created.</li>
+<li>Please note that currently our server scripts do not overwrite the existing files, so in case you want to repeat an upload task, rename the file to something different</li>
 <li>Return to the Wireshark application and press the Stop button (Capture -> Stop). In the filter bar type HTTP (the core protocol for the Web) and press Apply.</li>
 <li>You should be able to notice an HTTP POST request that was submitted to the web server's /sec/upload.php URL.Highlight the entry by clicking on it and then right-click and select the 'Follow TCP Stream' option.You should be able to notice the clear text of the document you have uploaded to the web server</li>
 <ul>
@@ -178,9 +179,9 @@
 <li>Return to Bob's web page and click on the link 'Upload a Confidential File'. Select the previously generated mysecret_student_surname.rsa file and click Submit. The server should report back with the decrypted message which indicates that it was able to successfully decrypt it with its private key.</li>
 <ul>
 	<li type="square">Why is it very important for the private key to be kept secure against unauthorized access?</li>
+	<li type="square">In the last step, we downloaded the public key from Bob's server in order to encrypt data in such a way that only Bob is able to decrypt them? How can an attacker take advantage of the above scheme and what could the implications be?</li>
+	<li type="square">How do digital certificates and the public key infrastructure solve the previous problem?</li>
 </ul>
-
-<li>Back on the Command Prompt console execute the following command 'openssl rsautl -decrypt -inkey C:\Users\student\Desktop\server.pub -in C:\Users\student\Desktop\secret.rsa -out C:\Users\student\Desktop\secret.txt'.</li>
 </ol>
 </article>
 								
